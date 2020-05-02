@@ -22,5 +22,23 @@ public class telainicialprojeto extends AppCompatActivity {
                 startActivity(ProxTela2);
             }
         });*/
+
+        Button Cadastro = (Button) findViewById(R.id.CadastroProd);
+        Cadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ProxTela = new Intent(telainicialprojeto.this,telacadastro.class);
+                startActivity(ProxTela);
+            }
+        });
+
+        Button Lista = (Button) findViewById(R.id.ListaProd);
+        Lista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ProxTela = new Intent(telainicialprojeto.this,telacadastro.class);
+                startActivity(ProxTela);
+            }
+        });
     }
 }

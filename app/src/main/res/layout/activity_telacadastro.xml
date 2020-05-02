@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".telacadastro"
+    android:background="@drawable/telainiciabackground">
+
+    <RelativeLayout
+        android:layout_width="382dp"
+        android:layout_height="638dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/textcadastro"
+            android:layout_width="161dp"
+            android:layout_height="53dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Cadastro"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textnomeprod"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textcadastro"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Nome do produto: " />
+
+        <TextView
+            android:id="@+id/textestoqueprod"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_below="@+id/textnomeprod"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Quantidade no estoque: " />
+
+        <TextView
+            android:id="@+id/textprecoprod"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_below="@+id/textestoqueprod"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Preço por unidade: " />
+
+        <TextView
+            android:id="@+id/textvalorestoque"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_below="@+id/textlocalprod"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Valor do estoque: " />
+
+        <TextView
+            android:id="@+id/textlocalprod"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_below="@+id/textprecoprod"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Local do produto: " />
+
+        <EditText
+            android:id="@+id/editnome"
+            android:layout_width="186dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/textcadastro"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/textnomeprod"
+            android:ems="10"
+            android:hint="Ex: Jorge da Silva Mendes"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editquantestoq"
+            android:layout_width="186dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/editnome"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/textnomeprod"
+            android:ems="10"
+            android:hint="Ex: 204"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editpecounid"
+            android:layout_width="186dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/editquantestoq"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/textnomeprod"
+            android:ems="10"
+            android:hint="Ex: 15.90"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editlocalprod"
+            android:layout_width="186dp"
+            android:layout_height="32dp"
+            android:layout_below="@+id/editpecounid"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/textnomeprod"
+            android:ems="10"
+            android:hint="Ex: Rua Jarbas Passarinho Bairro Tancredo Neves"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/textvalortotalestoque"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:gravity="center"
+            android:layout_below="@+id/editlocalprod"
+            android:layout_toRightOf="@+id/textnomeprod"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:text="valor" />
+
+        <Button
+            android:id="@+id/confirmarcadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            android:layout_toRightOf="@+id/textvalortotalestoque"
+            android:layout_below="@+id/textvalortotalestoque"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="160dp"
+
+
+            />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
