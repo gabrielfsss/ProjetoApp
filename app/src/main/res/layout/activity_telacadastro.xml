@@ -92,7 +92,7 @@
             android:inputType="numberDecimal" />
 
         <EditText
-            android:id="@+id/editpecounid"
+            android:id="@+id/editprecounid"
             android:layout_width="186dp"
             android:layout_height="32dp"
             android:layout_below="@+id/editquantestoq"
@@ -107,13 +107,13 @@
             android:id="@+id/editlocalprod"
             android:layout_width="186dp"
             android:layout_height="32dp"
-            android:layout_below="@+id/editpecounid"
+            android:layout_below="@+id/editprecounid"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="30dp"
             android:layout_toRightOf="@+id/textnomeprod"
             android:ems="10"
             android:hint="Ex: Rua Jarbas Passarinho Bairro Tancredo Neves"
-            android:inputType="numberDecimal" />
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textvalortotalestoque"
@@ -135,6 +135,7 @@
             android:layout_below="@+id/textvalortotalestoque"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="160dp"
+            android:onClick="CadastroProdutos"
 
 
             />
