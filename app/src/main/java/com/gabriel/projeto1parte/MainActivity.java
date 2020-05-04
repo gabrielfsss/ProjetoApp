@@ -14,13 +14,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button entrar = (Button) findViewById(R.id.entrar);
+        /*Button entrar = (Button) findViewById(R.id.entrar);
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent ProxTela = new Intent(MainActivity.this,telainicialprojeto.class);
                 startActivity(ProxTela);
             }
-        });
+        });*/
+    }
+
+    public void Entrar (View v){
+
+        Intent intent = new Intent(getApplicationContext(), telainicialprojeto.class);
+        startActivity(intent);
     }
 }

@@ -34,17 +34,37 @@ public class CadastrarProdBD extends SQLiteOpenHelper {
         db.execSQL(produto);
     }
 
-    public void salvarProdutosCad(Cadastro Cadastro)
+    public void salvarProdutosCad(Cadastro cadastro)
     {
 
         ContentValues values = new ContentValues();
 
-        values.put("nomeprod", Cadastro.getNomeprod());
-        values.put("quantestoq", Cadastro.getQuantestoq());
-        values.put("precoprod", Cadastro.getPrecoprod());
-        values.put("local", Cadastro.getLocal());
+        values.put("nomeprod", cadastro.getNomeprod());
+        values.put("quantestoq", cadastro.getQuantestoq());
+        values.put("precoprod", cadastro.getPrecoprod());
+        values.put("local", cadastro.getLocal());
 
         getWritableDatabase().insert("Cadastro", null, values);
+    }
+
+    public void alterarCadastro(Cadastro cadastro){
+
+        ContentValues values = new ContentValues();
+
+        values.put("nomeprod", cadastro.getNomeprod());
+        values.put("quantestoq", cadastro.getQuantestoq());
+        values.put("precoprod", cadastro.getPrecoprod());
+        values.put("local", cadastro.getLocal());
+
+
+        String[] args = {cadastro.getId().toString()};
+        getWritableDatabase().update("Cadastro", values, "id=?", args);
+    }
+
+    public void deletarCadastro(Cadastro cadastro){
+
+        String[] args = {cadastro.getId().toString()};
+        getWritableDatabase().delete("Cadastro", "id=?", args);
     }
 
     public ArrayList<Cadastro> getLista()

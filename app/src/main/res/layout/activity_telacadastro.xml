@@ -10,8 +10,16 @@
     <RelativeLayout
         android:layout_width="382dp"
         android:layout_height="638dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textcadastro"
@@ -19,8 +27,8 @@
             android:layout_height="53dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:text="Cadastro"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="Cadastro" />
 
         <TextView
             android:id="@+id/textnomeprod"
@@ -119,23 +127,22 @@
             android:id="@+id/textvalortotalestoque"
             android:layout_width="wrap_content"
             android:layout_height="39dp"
-            android:gravity="center"
             android:layout_below="@+id/editlocalprod"
-            android:layout_toRightOf="@+id/textnomeprod"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/textnomeprod"
+            android:gravity="center"
             android:text="valor" />
 
         <Button
-            android:id="@+id/confirmarcadastro"
+            android:id="@+id/btnpolimorf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastrar"
-            android:layout_toRightOf="@+id/textvalortotalestoque"
             android:layout_below="@+id/textvalortotalestoque"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="160dp"
-            android:onClick="CadastroProdutos"
+            android:layout_toRightOf="@+id/textvalortotalestoque"
+            android:text="polimorf"
 
 
             />
