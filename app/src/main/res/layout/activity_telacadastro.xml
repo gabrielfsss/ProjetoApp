@@ -139,8 +139,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textvalortotalestoque"
-            android:layout_marginLeft="41dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="53dp"
             android:layout_toRightOf="@+id/textvalortotalestoque"
             android:text="polimorf"
 
