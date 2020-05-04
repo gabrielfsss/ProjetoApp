@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.Serializable;
+
 import com.gabriel.projeto1parte.BDHelper.CadastrarProdBD;
 import com.gabriel.projeto1parte.model.Cadastro;
 
-public class telacadastro extends Activity {
+public class telacadastro extends AppCompatActivity {
 
     EditText editnome, editquantestoq, editprecounid, editlocalprod;
     Button btnpolimorf;
@@ -21,13 +23,13 @@ public class telacadastro extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_telacadastro);
+        setContentView(R.layout.activity_telacadastro); //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
         cadastro = new Cadastro();
         bdhelper = new CadastrarProdBD(telacadastro.this);
 
         Intent intent = getIntent();
-        editarCadastro = (Cadastro) intent.getSerializableExtra("produto_escolhido");
+        editarCadastro = (Cadastro) intent.getSerializableExtra("produto_escolhido"); //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
         editnome = (EditText) findViewById(R.id.editnome);
         editquantestoq = (EditText) findViewById(R.id.editquantestoq);
@@ -42,7 +44,7 @@ public class telacadastro extends Activity {
 
             editnome.setText(editarCadastro.getNomeprod());
             editquantestoq.setText(editarCadastro.getQuantestoq()+"");
-            editprecounid.setText(editarCadastro.getPrecoprod());
+            editprecounid.setText(editarCadastro.getPrecoprod()+"");
             editlocalprod.setText(editarCadastro.getLocal());
 
             cadastro.setId(editarCadastro.getId());
@@ -73,6 +75,4 @@ public class telacadastro extends Activity {
         });
 
     }
-
-
 }

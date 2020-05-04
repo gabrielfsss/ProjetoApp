@@ -36,10 +36,12 @@ public class telainicialprojeto extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-                Cadastro produtoescolhido = (Cadastro) adapter.getItemAtPosition(position);
+                Cadastro cadastros = (Cadastro) adapter.getItemAtPosition(position);
 
                 Intent intent = new Intent(telainicialprojeto.this, telacadastro.class);
-                intent.putExtra("produto_escolhido", produtoescolhido);
+                intent.putExtra("produto_escolhido", cadastros);
+
+                startActivity(intent);
 
             }
         });
@@ -96,7 +98,5 @@ public class telainicialprojeto extends AppCompatActivity {
             adapter = new ArrayAdapter<Cadastro>(telainicialprojeto.this, android.R.layout.simple_list_item_1, listview);
             lista.setAdapter(adapter);
         }
-
-        //finish();
     }
 }
