@@ -1,12 +1,23 @@
 package com.gabriel.projeto1parte.model;
 
-public class Cadastro {
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
+public class Cadastro implements Serializable {
 
     private Long id;
     private String nomeprod;
     private int quantestoq;
     private int precoprod;
     private String local;
+
+    @NonNull
+    @Override
+
+    public String toString() {
+        return nomeprod.toString();
+    }
 
     public Long getId() {
         return id;

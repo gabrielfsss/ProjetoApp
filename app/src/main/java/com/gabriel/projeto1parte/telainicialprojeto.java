@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
 import com.gabriel.projeto1parte.BDHelper.CadastrarProdBD;
 import com.gabriel.projeto1parte.model.Cadastro;
 
@@ -28,14 +31,44 @@ public class telainicialprojeto extends AppCompatActivity {
         setContentView(R.layout.activity_telainicialprojeto);
 
         lista = (ListView)findViewById(R.id.listview);
+        registerForContextMenu(lista);
 
-
-        Button CadastroProd = (Button) findViewById(R.id.CadastroProd);
-        CadastroProd.setOnClickListener(new View.OnClickListener() {
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent ProxTela = new Intent(telainicialprojeto.this,telacadastro.class);
-                startActivity(ProxTela);
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Cadastro produtoescolhido = (Cadastro) adapter.getItemAtPosition(position);
+
+                Intent intent = new Intent(telainicialprojeto.this, telacadastro.class);
+                intent.putExtra("produto_escolhido", produtoescolhido);
+
+            }
+        });
+
+        lista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapter, View view, int position, long id) {
+                cadastro = (Cadastro)adapter.getItemAtPosition(position);
+
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+
+        MenuItem menuDelete = menu.add("excluir produto");
+        menuDelete.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                bdhelper = new CadastrarProdBD(telainicialprojeto.this);
+                bdhelper.deletarCadastro(cadastro);
+                bdhelper.close();
+
+                carregarProduto();
+                return true;
             }
         });
     }

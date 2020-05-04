@@ -37,7 +37,16 @@ public class telacadastro extends Activity {
         btnpolimorf = (Button) findViewById(R.id.btnpolimorf);
 
         if(editarCadastro != null){
+
             btnpolimorf.setText("Modificar");
+
+            editnome.setText(editarCadastro.getNomeprod());
+            editquantestoq.setText(editarCadastro.getQuantestoq()+"");
+            editprecounid.setText(editarCadastro.getPrecoprod());
+            editlocalprod.setText(editarCadastro.getLocal());
+
+            cadastro.setId(editarCadastro.getId());
+
         }else{
             btnpolimorf.setText("Cadastrar");
         }
@@ -55,7 +64,7 @@ public class telacadastro extends Activity {
 
                     bdhelper.salvarProdutosCad(cadastro);
                     bdhelper.close();
-                }else{
+                }else if(btnpolimorf.getText().toString().equals("Modificar")){
 
                     bdhelper.alterarCadastro(cadastro);
                     bdhelper.close();
