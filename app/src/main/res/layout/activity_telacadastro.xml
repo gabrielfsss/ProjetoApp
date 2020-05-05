@@ -28,7 +28,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:gravity="center"
-            android:text="Cadastro" />
+            android:text="Cadastro do produto" />
 
         <TextView
             android:id="@+id/textnomeprod"
@@ -46,7 +46,7 @@
             android:layout_below="@+id/textnomeprod"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:text="Quantidade no estoque: " />
+            android:text="Quantidades no estoque: " />
 
         <TextView
             android:id="@+id/textprecoprod"
