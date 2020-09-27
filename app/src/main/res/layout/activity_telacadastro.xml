@@ -85,7 +85,8 @@
             android:layout_toRightOf="@+id/textnomeprod"
             android:ems="10"
             android:hint="Ex: Jorge da Silva Mendes"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:onClick="ModificarVisible" />
 
         <EditText
             android:id="@+id/editquantestoq"
@@ -97,7 +98,8 @@
             android:layout_toRightOf="@+id/textnomeprod"
             android:ems="10"
             android:hint="Ex: 204"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:onClick="ModificarVisible" />
 
         <EditText
             android:id="@+id/editprecounid"
@@ -109,7 +111,8 @@
             android:layout_toRightOf="@+id/textnomeprod"
             android:ems="10"
             android:hint="Ex: 15.90"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:onClick="ModificarVisible" />
 
         <EditText
             android:id="@+id/editlocalprod"
@@ -121,7 +124,8 @@
             android:layout_toRightOf="@+id/textnomeprod"
             android:ems="10"
             android:hint="Ex: Rua Jarbas Passarinho Bairro Tancredo Neves"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:onClick="ModificarVisible" />
 
         <TextView
             android:id="@+id/textvalortotalestoque"
@@ -142,10 +146,7 @@
             android:layout_marginLeft="47dp"
             android:layout_marginTop="53dp"
             android:layout_toRightOf="@+id/textvalortotalestoque"
-            android:text="polimorf"
-
-
-            />
+            android:text="polimorf" />
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

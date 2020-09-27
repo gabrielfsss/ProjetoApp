@@ -74,7 +74,7 @@
             android:background="@drawable/buttoncadastroshape"
             android:text="Ainda não tem um conta? Se cadastre aqui"
             android:textAllCaps="false"
-            android:textColor="#94F1CC"
+            android:textColor="#E91E63"
             android:textSize="12sp" />
 
 

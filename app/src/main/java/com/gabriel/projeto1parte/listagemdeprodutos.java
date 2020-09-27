@@ -16,7 +16,7 @@ import com.gabriel.projeto1parte.model.Cadastro;
 
 import java.util.ArrayList;
 
-public class telainicialprojeto extends AppCompatActivity {
+public class listagemdeprodutos extends AppCompatActivity {
 
     ListView lista;
     CadastrarProdBD bdhelper;
@@ -27,9 +27,9 @@ public class telainicialprojeto extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_telainicialprojeto);
+        setContentView(R.layout.activity_listagemdeprodutos);
 
-        lista = (ListView)findViewById(R.id.listview);
+        lista = (ListView)findViewById(R.id.listviewProdutos);
         registerForContextMenu(lista);
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -37,10 +37,11 @@ public class telainicialprojeto extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
                 Cadastro cadastros = (Cadastro) adapter.getItemAtPosition(position);
 
-                Intent intent = new Intent(telainicialprojeto.this, telacadastro.class);
+                Intent intent = new Intent(listagemdeprodutos.this, telacadastro.class);
                 intent.putExtra("produto_escolhido", cadastros);
 
                 startActivity(intent);
+
             }
         });
 
@@ -52,7 +53,6 @@ public class telainicialprojeto extends AppCompatActivity {
                 return false;
             }
         });
-
     }
 
     @Override
@@ -63,7 +63,7 @@ public class telainicialprojeto extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 
-                bdhelper = new CadastrarProdBD(telainicialprojeto.this);
+                bdhelper = new CadastrarProdBD(listagemdeprodutos.this);
                 bdhelper.deletarCadastro(cadastro);
                 bdhelper.close();
 
@@ -73,13 +73,6 @@ public class telainicialprojeto extends AppCompatActivity {
         });
     }
 
-    public void irTelaCadastro (View v){
-
-        Intent intent = new Intent(getApplicationContext(), telacadastro.class);
-        startActivity(intent);
-    }
-
-
     protected void onResume(){
 
         super.onResume();
@@ -88,13 +81,13 @@ public class telainicialprojeto extends AppCompatActivity {
 
     public void carregarProduto(){
 
-        bdhelper = new CadastrarProdBD(telainicialprojeto.this);
+        bdhelper = new CadastrarProdBD(listagemdeprodutos.this);
         listview = bdhelper.getLista();
         bdhelper.close();
 
         if(listview!=null){
 
-            adapter = new ArrayAdapter<Cadastro>(telainicialprojeto.this, android.R.layout.simple_list_item_1, listview);
+            adapter = new ArrayAdapter<Cadastro>(listagemdeprodutos.this, android.R.layout.simple_list_item_1, listview);
             lista.setAdapter(adapter);
         }
     }

@@ -9,14 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".telalista" android:label="telalista" android:parentActivityName=".telainicialprojeto"></activity>
+        <activity android:name=".telainicialprojetoo"></activity>
+        <activity android:name=".listagemdeprodutos" />
+        <activity
+            android:name=".telalista"
+            android:label="telalista"
+            android:parentActivityName=".telainicialprojeto" />
         <activity
             android:name=".telacadastro"
             android:label="telacadastro"
             android:parentActivityName=".telainicialprojeto" />
         <activity
             android:name=".telainicialprojeto"
-            android:label="Tela inicial"
+            android:label="APP"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

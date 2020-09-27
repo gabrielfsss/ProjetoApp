@@ -6,6 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import com.gabriel.projeto1parte.BDHelper.CadastrarProdBD;
+import com.gabriel.projeto1parte.BDHelper.CadastrarUsuarioBD;
+import com.gabriel.projeto1parte.model.CadastroUsuario;
 
 public class MainActivity extends AppCompatActivity {
 

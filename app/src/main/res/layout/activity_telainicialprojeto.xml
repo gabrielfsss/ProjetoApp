@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".telainicialprojeto"
-    android:background="@drawable/telainiciabackground">
+    android:background="@drawable/background">
 
     <ListView
         android:id="@+id/listview"

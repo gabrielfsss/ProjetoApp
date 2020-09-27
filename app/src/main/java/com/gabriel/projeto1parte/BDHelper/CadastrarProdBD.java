@@ -34,6 +34,7 @@ public class CadastrarProdBD extends SQLiteOpenHelper {
         db.execSQL(produto);
     }
 
+
     public void salvarProdutosCad(Cadastro cadastro)
     {
 
@@ -68,25 +69,25 @@ public class CadastrarProdBD extends SQLiteOpenHelper {
     }
 
     public ArrayList<Cadastro> getLista()
-    {
+        {
 
-        String [] columns = {"id","nomeprod","quantestoq","precoprod","local"};
-        Cursor cursor = getWritableDatabase().query("Cadastro",columns,null, null, null, null, null, null);
+            String [] columns = {"id","nomeprod","quantestoq","precoprod","local"};
+            Cursor cursor = getWritableDatabase().query("Cadastro",columns,null, null, null, null, null, null);
 
-        ArrayList<Cadastro> cadastro = new ArrayList<Cadastro>();
+            ArrayList<Cadastro> cadastro = new ArrayList<Cadastro>();
 
-        while(cursor.moveToNext()){
+            while(cursor.moveToNext()){
 
-            Cadastro cadastros = new Cadastro();
-            cadastros.setId(cursor.getLong(0));
-            cadastros.setNomeprod(cursor.getString(1));
-            cadastros.setQuantestoq(cursor.getInt(2));
-            cadastros.setPrecoprod(cursor.getInt(3));
-            cadastros.setLocal(cursor.getString(4));
+                Cadastro cadastros = new Cadastro();
+                cadastros.setId(cursor.getLong(0));
+                cadastros.setNomeprod(cursor.getString(1));
+                cadastros.setQuantestoq(cursor.getInt(2));
+                cadastros.setPrecoprod(cursor.getInt(3));
+                cadastros.setLocal(cursor.getString(4));
 
-            cadastro.add(cadastros);
+                cadastro.add(cadastros);
 
-        }return cadastro;
+            }return cadastro;
     }
 
 

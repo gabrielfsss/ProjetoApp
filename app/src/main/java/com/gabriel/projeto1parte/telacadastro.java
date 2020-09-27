@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.io.Serializable;
 
@@ -17,6 +18,7 @@ public class telacadastro extends AppCompatActivity {
 
     EditText editnome, editquantestoq, editprecounid, editlocalprod;
     Button btnpolimorf;
+    TextView textView;
     Cadastro editarCadastro, cadastro;
     CadastrarProdBD bdhelper;
 
@@ -42,10 +44,14 @@ public class telacadastro extends AppCompatActivity {
 
             btnpolimorf.setText("Modificar");
 
+            btnpolimorf.setVisibility(View.INVISIBLE);
+
             editnome.setText(editarCadastro.getNomeprod());
             editquantestoq.setText(editarCadastro.getQuantestoq()+"");
             editprecounid.setText(editarCadastro.getPrecoprod()+"");
             editlocalprod.setText(editarCadastro.getLocal());
+
+            //textView.setText(editlocalprod.getText());
 
             cadastro.setId(editarCadastro.getId());
 
@@ -73,6 +79,10 @@ public class telacadastro extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    public void ModificarVisible (View v){
+
+        btnpolimorf.setVisibility(View.VISIBLE);
     }
 }
