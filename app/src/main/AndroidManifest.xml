@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".telainicialprojetoo"></activity>
+        <activity android:name=".TelaCadastrarUsuario"></activity>
+        <activity android:name=".telainicialprojetoo" />
         <activity android:name=".listagemdeprodutos" />
         <activity
             android:name=".telalista"
